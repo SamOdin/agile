@@ -1,0 +1,15 @@
+<section *ngIf="state$ | async as text">
+  <ng-container [ngSwitch]="text?.synonyms?.status">
+    <ng-template [ngSwitchCase]="statuses.LOADING">
+      <span>Loading ...</span>
+    </ng-template>
+
+    <ng-template [ngSwitchCase]="statuses.LOADED">
+      <div class="list">
+        <span *ngFor="let item of text?.synonyms?.data; trackBy: trackByRow" (click)="selectWord(item)">
+          {{item?.word}}
+        </span>
+      </div>
+    </ng-template>
+  </ng-container>
+</section>

@@ -1,0 +1,10 @@
+<div class="file" *ngIf="text$ | async as data">
+  <span *ngFor="let item of data?.text; trackBy: trackByRow"
+        [ngClass]="{'isSelected': item?.options?.isSelected,
+        'isBold': item?.options?.isBold,
+        'isItalic': item?.options?.isItalic,
+        'isUnderlined': item?.options?.isUnderlined}"
+        [appHoverText]="item" (click)="selectText(item)">
+    {{item?.text}}
+  </span>
+</div>

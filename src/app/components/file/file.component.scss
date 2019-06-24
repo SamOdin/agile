@@ -1,0 +1,44 @@
+:host {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.file {
+  width: 600px;
+  background-color: #fff;
+  border: 1px solid #e4dede;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+
+  span {
+    padding: 2px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all .2s ease;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: darken((#fff), 10%);
+    }
+
+    &.isSelected {
+      background-color: darken((#fff), 20%);
+    }
+
+    &.isBold {
+      font-weight: bold;
+    }
+
+    &.isItalic {
+      font-style: italic;
+    }
+
+    &.isUnderlined {
+      text-decoration: underline;
+    }
+  }
+}
